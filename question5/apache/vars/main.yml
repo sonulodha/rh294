@@ -1,0 +1,11 @@
+---
+# defaults file for apache
+  rules:
+    - http
+    - https
+  packages:
+    - httpd
+    - firewalld
+  services:
+    - httpd
+    - firewalld

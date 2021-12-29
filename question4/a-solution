@@ -1,0 +1,5 @@
+#exam
+sudo yum install rhel-system-roles
+
+# lab 
+# git clone github.com/sonulodha/rhel-system-roles.git

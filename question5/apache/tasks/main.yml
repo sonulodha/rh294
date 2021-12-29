@@ -1,0 +1,30 @@
+---
+# tasks file for apache
+- name: install all packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ packages }}"
+
+- name: create info file from template
+  template:
+    src: hosts.j2
+    dest: /var/www/html/index.html
+
+- name: start and enable the services
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: true
+  loop: "{{ servides }}"
+
+- name: add fireall rules
+  firewalld:
+    service: "{{ item }}"
+    permanent: true
+    immediate: true
+    state: enabled
+  loop: "{{ rules }}"
+
+# run curl command on controller machine to access index.html 
+# curl http://servera.lab.example.com    

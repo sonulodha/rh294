@@ -1,0 +1,5 @@
+# mkdir /home/devops/ansible 
+# yum install ansible -y
+# cd /home/devops/ansible
+# vim inventory
+# vim ansible.cfg
